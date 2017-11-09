@@ -16,7 +16,6 @@ module.exports = function (app) {
         res.json(friends);
     });
 
-    // If no matching route is found default to home
     app.post("/api/friends", function (req, res) {
         friends.push(req.body);
         res.json(true);
