@@ -20,7 +20,7 @@
 // ```
 
 
-var friends = [];
+const friends = [];
 
 
 module.exports = friends;

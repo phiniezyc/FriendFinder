@@ -220,7 +220,7 @@
 
     <script type="text/javascript">
         // Chosen CSS
-        var config = {
+        const config = {
             '.chosen-select': {},
             '.chosen-select-deselect': {
                 allow_single_deselect: true
@@ -235,7 +235,7 @@
                 width: "95%"
             }
         }
-        for (var selector in config) {
+        for (const selector in config) {
             $(selector).chosen(config[selector]);
         }
 
@@ -244,7 +244,7 @@
 
             // Form validation
             function validateForm() {
-                var isValid = true;
+                const isValid = true;
                 $('.form-control').each(function () {
                     if ($(this).val() === '')
                         isValid = false;
@@ -261,7 +261,7 @@
             // If all required fields are filled
             if (validateForm() == true) {
                 // Create an object for the user's data
-                var userData = {
+                const userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
                     scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
@@ -271,7 +271,7 @@
 
 
                 // Grab the URL of the website
-                var currentURL = window.location.origin;
+                const currentURL = window.location.origin;
 
                 // AJAX post the data to the friends API. 
                 $.post(currentURL + "/api/friends", userData, function (data) {
