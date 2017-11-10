@@ -22,9 +22,30 @@ const path = require("path");
 const friends = require("../data/friends");
 
 
-const friend1 = friends[0].scores; // gives us the first user's score 
-const friend2 = friends[1].scores;
 
+
+
+const friend1 = friends[0].scores; // gives us the first user's score and so forth
+const friend2 = friends[1].scores;
+const friend3 = friends[2].scores;
+const friend4 = friends[3].scores;
+const friend5 = friends[4].scores;
+const friend6 = friends[5].scores;
+const friend7 = friends[6].scores;
+const friend8 = friends[7].scores;
+const friend9 = friends[8].scores;
+const friend10 = friends[9].scores;
+
+const userScores = [];
+
+
+
+let friend1Comparison = friends.map(each => {
+    userScores.push("User Score Test: " + friends[friends.length -1].scores);
+    console.log(userScores);
+    //console.log(each);
+
+});
 
 
 
@@ -42,7 +63,10 @@ module.exports = function (app) {
         //posts the user survey results to friends in JSON format
         friends.push(req.body);
         res.json(true);
-        
+
+        var userSubmission = req.body;
+        console.log(userScores);
+
     });
 
 };
