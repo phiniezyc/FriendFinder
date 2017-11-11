@@ -11,12 +11,7 @@ module.exports = function (app) {
         res.json(friends);
     });
 
-    app.post("/api/friends", function(req, res) {
-        //posts the user survey results to friends in JSON format
-        //friends.push(req.body);
-        //res.json(true);
-
-
+    app.post("/api/friends", function (req, res) {
 
         //for some reason "scores" property is "scores[]" and I can't figure out exactly why...
         const newUserSubmission = req.body["scores[]"];
@@ -32,7 +27,6 @@ module.exports = function (app) {
                 scoresDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(newUserSubmission[j])));
 
             }
-
             //pushes each comparison into the scoresComparisonArray 
             scoreComparisonArray.push(scoresDiff);
         }

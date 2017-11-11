@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>FriendFinder</title>
 
-    <!-- Latest compiled and minified CSS & JS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -239,18 +239,18 @@
             $(selector).chosen(config[selector]);
         }
 
-        // Capture the form inputs 
-        $("#submit").on("click", function() {
+        // Captures the form inputs 
+        $("#submit").on("click", function () {
 
             // Form validation
-            function validateForm () {
+            function validateForm() {
                 const isValid = true;
-                $('.form-control').each(function() {
+                $('.form-control').each(function () {
                     if ($(this).val() === '')
                         isValid = false;
                 });
 
-                $('.chosen-select').each( function() {
+                $('.chosen-select').each(function () {
 
                     if ($(this).val() === "")
                         isValid = false
@@ -258,9 +258,9 @@
                 return isValid;
             }
 
-            // If all required fields are filled
+
             if (validateForm() == true) {
-                // Create an object for the user's data
+                // Creats object for the user's data
                 const userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
