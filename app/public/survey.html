@@ -245,16 +245,17 @@
             // Form validation
             function validateForm() {
                 const isValid = true;
-                $('.form-control').each(function () {
-                    if ($(this).val() === '')
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
                         isValid = false;
+                    }
                 });
 
-                $('.chosen-select').each(function () {
-
-                    if ($(this).val() === "")
+                $(".chosen-select").each(function () {
+                    if ($(this).val() === "") {
                         isValid = false
-                })
+                    }
+                });
                 return isValid;
             }
 
