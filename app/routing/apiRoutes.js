@@ -18,18 +18,18 @@ module.exports = function (app) {
         //friends.push(req.body);
         //res.json(true);
 
-        var userSubmission = req.body;
+        const userSubmission = req.body;
 
-        var newUserSubmission = req.body;
-        var scoreComparisonArray = [];
-        var friendCount = 0;
+        const newUserSubmission = req.body;
+        const scoreComparisonArray = [];
+        const friendCount = 0;
         //index position for best match comparison 
-        var bestScoreMatch = 0;
+        let bestScoreMatch = 0;
         //goes through all the current friends 
-        for (var i = 0; i < friends.length; i++) {
-            var scoresDiff = 0;
+        for (let i = 0; i < friends.length; i++) {
+            let scoresDiff = 0;
             //goes through scores to compare friends
-            for (var j = 0; j < newUserSubmission.length; j++) {
+            for (let j = 0; j < newUserSubmission.length; j++) {
                 scoresDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(newUserSubmission[j])));
             }
 
@@ -37,14 +37,14 @@ module.exports = function (app) {
             scoreComparisonArray.push(scoresDiff);
         }
         //Go through all the comparisons and find the one w/ the least difference aka the best match
-        for (var i = 0; i < scoreComparisonArray.length; i++) {
+        for (let i = 0; i < scoreComparisonArray.length; i++) {
             if (scoreComparisonArray[i] <= scoreComparisonArray[bestScoreMatch]) {
                 bestScoreMatch = i;
             }
         }
 
         //pick the best match w/ friend
-        var bestMatchPick = friends[bestScoreMatch];
+        const bestMatchPick = friends[bestScoreMatch];
         res.json(bestMatchPick);
 
         //submits user info into friends array w/ the friend objects
