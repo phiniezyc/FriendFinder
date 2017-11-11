@@ -18,8 +18,8 @@ module.exports = function (app) {
 
 
 
-        //can't pull in req.body.scores
-        const newUserSubmission = req.body;
+        //for some reason "scores" property is "scores[]" and I can't figure out exactly why...
+        const newUserSubmission = req.body["scores[]"];
         const scoreComparisonArray = [];
         const friendCount = 0;
         //index position for best match comparison 
