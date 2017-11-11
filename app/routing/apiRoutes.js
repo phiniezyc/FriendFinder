@@ -1,18 +1,17 @@
-
 const path = require("path");
 const friends = require("../data/friends");
 
 
 
 
-module.exports = (app)=> {
+module.exports = (app) => {
 
     // displays JSON of all the friends
-    app.get("/api/friends",  (req, res)=> {
+    app.get("/api/friends", (req, res) => {
         res.json(friends);
     });
 
-    app.post("/api/friends", (req, res)=> {
+    app.post("/api/friends", (req, res) => {
         //posts the user survey results to friends in JSON format
         //friends.push(req.body);
         //res.json(true);
@@ -20,7 +19,7 @@ module.exports = (app)=> {
 
 
         //can't pull in req.body.scores
-        const newUserSubmission = req.body; 
+        const newUserSubmission = req.body;
         const scoreComparisonArray = [];
         const friendCount = 0;
         //index position for best match comparison 
@@ -31,7 +30,7 @@ module.exports = (app)=> {
             //goes through scores to compare friends
             for (let j = 0; j < newUserSubmission.length; j++) {
                 scoresDiff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(newUserSubmission[j])));
-                
+
             }
 
             //pushes each comparison into the scoresComparisonArray 
@@ -50,7 +49,7 @@ module.exports = (app)=> {
 
         //submits user info into friends array w/ the friend objects
         friends.push(req.body);
-        
+
 
     });
 };

@@ -240,17 +240,17 @@
         }
 
         // Capture the form inputs 
-        $("#submit").on("click", ()=> {
+        $("#submit").on("click", () => {
 
             // Form validation
-             validateForm => {
+            validateForm => {
                 const isValid = true;
-                $('.form-control').each( ()=> {
+                $('.form-control').each(() => {
                     if ($(this).val() === '')
                         isValid = false;
                 });
 
-                $('.chosen-select').each( ()=> {
+                $('.chosen-select').each(() => {
 
                     if ($(this).val() === "")
                         isValid = false
@@ -274,7 +274,7 @@
                 const currentURL = window.location.origin;
 
                 // AJAX post the data to the friends API. 
-                $.post(currentURL + "/api/friends", userData, (data)=> {
+                $.post(currentURL + "/api/friends", userData, (data) => {
 
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#matchName").text(data.name);
