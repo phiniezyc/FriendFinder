@@ -4,14 +4,14 @@ const friends = require("../data/friends");
 
 
 
-module.exports = (app) => {
+module.exports = function (app) {
 
     // displays JSON of all the friends
-    app.get("/api/friends", (req, res) => {
+    app.get("/api/friends", function (req, res) {
         res.json(friends);
     });
 
-    app.post("/api/friends", (req, res) => {
+    app.post("/api/friends", function(req, res) {
         //posts the user survey results to friends in JSON format
         //friends.push(req.body);
         //res.json(true);
