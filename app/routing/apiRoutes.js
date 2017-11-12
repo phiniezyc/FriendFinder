@@ -13,7 +13,7 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
 
-        //for some reason "scores" property is "scores[]" and I can't figure out exactly why...
+        
         const newUserSubmission = req.body.scores;
         const scoreComparisonArray = [];
         const friendCount = 0;
