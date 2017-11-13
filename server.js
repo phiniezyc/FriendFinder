@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 var bodyParser = require("body-parser");
 
 // Tells node that we are creating an "express" server

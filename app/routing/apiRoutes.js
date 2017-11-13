@@ -1,4 +1,3 @@
-const path = require("path");
 const friends = require("../data/friends");
 
 
@@ -13,7 +12,7 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
 
-        
+
         const newUserSubmission = req.body.scores;
         const scoreComparisonArray = [];
         const friendCount = 0;
